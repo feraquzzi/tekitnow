@@ -28,6 +28,9 @@
     <!--registration form style-->
     <link rel="stylesheet" href="css/registrationform.css">
 
+    <!--firebase sdks-->
+    
+
     <!--script for bootstrap-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -131,7 +134,8 @@
                         </li>
                     </ul>
                     <!-- Step Wise Form Content -->
-                    <form id="userAccountSetupForm" name="userAccountSetupForm" enctype="multipart/form-data" method="POST">
+
+                    <form action="#" id="registrationForm" >
                         <!-- Step 1 Content -->
                         <section id="step-1" class="form-step">
                             <h2 class="font-normal">Personal Details</h2>
@@ -140,47 +144,46 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="firstName"><b style="color: darkorange">First Name</b></label>
-                                        <input type="text" class="form-control" id="firstName" >
+                                        <input type="text" class="form-control" id="firstname" name="firstname">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="lastName"><b style="color: darkorange">Surname</b></label>
-                                        <input type="text" class="form-control" id="surname" >
+                                        <input type="text" class="form-control" id="surname" name="surname">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="email"><b style="color: darkorange">Email Address</b></label>
-                                        <input type="email" class="form-control" id="email" >
+                                        <input type="email" class="form-control" id="email" name="email">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="phone"><b style="color: darkorange">Phone number</b></label>
-                                        <input type="number" class="form-control" id="phone" >
+                                        <input type="number" class="form-control" id="phone" name="phone">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputAddress"><b style="color: darkorange">Address</b></label>
-                                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                    <input type="text" class="form-control" id="address" placeholder="1234 Main St" name="address">
                                 </div>
 
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputCity"><b style="color: darkorange">City</b></label>
-                                        <input type="text" class="form-control" id="inputCity">
+                                        <input type="text" class="form-control" id="city" name="city">
                                     </div>
 
                                     <div class="form-group col-md-4">
                                         <label for="inputState"><b style="color: darkorange">State</b></label>
-                                        <input type="text" class="form-control" id="inputState">
+                                        <input type="text" class="form-control" id="state" name="state">
                                     </div>
 
                                     <div class="form-group col-md-2">
                                     <label for="age"><b style="color: darkorange">Age</b></label>
-                                    <input type="number" class="form-control" id="age">
+                                    <input type="number" class="form-control" id="age" name="age">
                                     </div>
-                                </div>
-                                
-                            </div>
+                                </div>   
+                           </div>
                             <div class="mt-3">
                                 <button class="button btn-navigate-form-step" type="button" step_number="2">Next</button>
                             </div>
@@ -193,20 +196,20 @@
                                 <div class="mt-3 col-md-6">
                                     <label for="course"><b style="color: darkorange">Course of Interest</b></label>
                                     <select id="course" class="form-control">
-                                        <option>Choose...</option>
-                                        <option>Web Design</option>
-                                        <option>Content Management System</option>
-                                        <option>UI/UX</option>
-                                        <option>Graphic Design</option>
+                                        <option value="noselection">----please select a course----</option>
+                                        <option value="webdesign">Web Design</option>
+                                        <option value="cms">Content Management System</option>
+                                        <option value="ui">UI/UX</option>
+                                        <option value="graphics">Graphic Design</option>
                                     </select>
                                 </div>
     
                                 <div class="mt-3 col-md-6">
                                     <label for="studyType"><b style="color: darkorange">Study Type</b></label>
-                                    <select id="course" class="form-control">
-                                        <option>Choose...</option>
-                                        <option>Online</option>
-                                        <option>Onsite</option>
+                                    <select id="studyType" class="form-control">
+                                        <option value="noselection">Choose...</option>
+                                        <option value="online">Online</option>
+                                        <option value="onsite">Onsite</option>
                                     </select>
                                 </div>
                             </div>
@@ -214,10 +217,10 @@
                             <div class="form-row">
                                 <div class="mt-3 col-md-6">
                                     <label for="periods"><b style="color: darkorange">Periods</b></label>
-                                    <select id="course" class="form-control">
-                                        <option>Choose...</option>
-                                        <option>Week days</option>
-                                        <option>Weekends (this is only available to Online student)</option>
+                                    <select id="programDay" class="form-control">
+                                        <option value="noselection">Choose...</option>
+                                        <option value="weekdays">Week days</option>
+                                        <option value="weekends">Weekends (this is only available to Online student)</option>
                                     </select>
                                 </div>
                             </div>
@@ -235,19 +238,19 @@
                             <div class="col-md-4 mt-3">
                                 <label for="gender"><b style="color: darkorange">Gender</b></label><br/>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="male">
+                                    <input class="form-check-input" type="radio" name="gender" value="male">
                                     <label class="form-check-label" for="male">Male</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="female">
+                                    <input class="form-check-input" type="radio" name="gender" value="female">
                                     <label class="form-check-label" for="female">Female</label>
                                 </div>
     
                             </div>
 
                             <div class="col-md-4 mt-3">
-                                <input type="file" class="custom-file" id="customFile">
-                                <label class="custom-file-label" for="customFile"><b style="color: darkorange">Passport Photo</b></label>
+                                <input type ='file' id = "demo" />
+                                <img id = "myid" src = "#" alt = "new image" />
                             </div>
 
 
@@ -257,6 +260,7 @@
                             </div>
                         </section>
                     </form>
+
                 </div>
             </div>
         </div>
@@ -328,9 +332,30 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </footer>
     <!-- footer part end-->
 
-    
+  
+    <script src= "https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <!--registration form js-->
+    <script src="js/register.js"></script>
     <script src="js/registrationform.js"></script>
+
+    <script>
+        function display(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(event) {
+                    $('#myid').attr('src', event.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#demo").change(function() {
+        display(this);
+        });
+
+    </script>
 
 </body>
 

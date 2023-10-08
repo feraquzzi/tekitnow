@@ -1,4 +1,5 @@
 
+
 /**
  * Define a function to navigate betweens form steps.
  * It accepts one parameter. That is - step number.
@@ -71,3 +72,7 @@ document.querySelectorAll(".btn-navigate-form-step").forEach((formNavigationBtn)
         navigateToFormStep(stepNumber);
     });
 });
+
+
+
+
