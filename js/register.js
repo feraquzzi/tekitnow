@@ -11,7 +11,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // Reference messages collection
-var registrationRef = firebase.database().ref('registration'); 
+var registrationRef = firebase.database().ref('Course registration'); 
 
 // Listen for form submit
 document.getElementById('registrationForm').addEventListener('submit', submitForm);
@@ -23,7 +23,10 @@ function submitForm(e){
   var course = document.getElementById("course");
   var study = document.getElementById("studyType");
   var days = document.getElementById("programDay");  
-
+  var edu = document.getElementById("educationLevel");
+  var intellect = document.getElementById("knowledgeLevel");
+  var prefix = document.getElementById("title");
+  
   //Get value
   var firstname = getInputVal('firstname');
   var surname = getInputVal('surname');
@@ -32,22 +35,20 @@ function submitForm(e){
   var city = getInputVal('city');
   var state = getInputVal('state');
   var age = getInputVal('age');
+  var reasonForStudy = getInputVal('reason');
+
   var coursetype = course.value;
   var studytype = study.value;
   var programday = days.value;
+  var studentEducationLevel = edu.value;
+  var knowledgeLevel = intellect.value;
+  var namePrefix = prefix.value;
  
 
   // Save message
-  saveMessage(firstname, surname, email, phone, city, state, age, coursetype, studytype, programday, gender);
+  saveMessage(firstname, surname, email, phone, city, state, age, coursetype, studytype, programday, studentEducationLevel, knowledgeLevel, reasonForStudy, namePrefix);
 
-  // Show alert
-  document.querySelector('.alert').style.display = 'block';
-
-  // Hide alert after 3 seconds
-  setTimeout(function(){
-    document.querySelector('.alert').style.display = 'none';
-  },3000);
-
+  
   // Clear form
   document.getElementById('registrationForm').reset();
   //console.log('hello')
@@ -59,7 +60,7 @@ function getInputVal(id){
 }
 
 // Save message to firebase
-function saveMessage(firstname, surname, email, phone, city, state, age, coursetype, studytype, programday){
+function saveMessage(firstname, surname, email, phone, city, state, age, coursetype, studytype, programday, studentEducationLevel, knowledgeLevel, reasonForStudy, namePrefix){
   var newRegistrationRef = registrationRef.push();
   newRegistrationRef.set({
     firstname: firstname,
@@ -71,6 +72,10 @@ function saveMessage(firstname, surname, email, phone, city, state, age, courset
     age: age,
     courseofinterest: coursetype,
     studytype: studytype,
-    programday: programday
+    programday: programday,
+    StudentEducationLevel: studentEducationLevel,
+    knowledgeLevel: knowledgeLevel,
+    reasonForStudy: reasonForStudy,
+    Prefix: namePrefix
   });
 }

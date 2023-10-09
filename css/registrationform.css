@@ -159,6 +159,11 @@ input[type=radio]{
     accent-color:darkorange;
     width:20px;
     height:20px;
+    outline:none;
 }
 
+.sub-btn:hover{
+    background-color: linear-gradient(12deg, rgb(4, 61, 61), teal);
+    color: white;
+}
  
