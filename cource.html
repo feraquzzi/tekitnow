@@ -271,14 +271,14 @@
                         <h4>Newsletter</h4>
                         <p>Stay updated with our latest courses and offers.
                         </p>
-                        <form action="#">
+                        <form action="#" id="newsletter">
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder='Enter email address'
                                         onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Enter email address'">
+                                        onblur="this.placeholder = 'Enter email address'" name="email" id="email">
                                     <div class="input-group-append">
-                                        <button class="btn btn_1" type="button"><i class="ti-angle-right"></i></button>
+                                        <button class="btn btn_1" type="submit"><i class="ti-angle-right"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -321,7 +321,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </footer>
     <!-- footer part end-->
-
+    <script src= "https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+    <script src="js/newsletter.js"></script>
     <!-- jquery plugins here-->
     <!-- jquery -->
     <script src="js/jquery-1.12.1.min.js"></script>
